@@ -1,0 +1,14 @@
+# idea
+/.idea
+
+# data & model
+/data
+word2vec-768.txt
+model.bin
+
+# info
+Project.pdf
+README*.md
+
+# others
+/llm
