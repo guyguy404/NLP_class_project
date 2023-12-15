@@ -1,4 +1,4 @@
-#coding=utf8
+# coding=utf8
 import re
 import torch
 import torch.nn as nn
@@ -12,16 +12,17 @@ class SLUBertTagging(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.config = config
-        self.config.hidden_size = 21128
+        self.bert_out_size = 21128
         self.dropout_layer = nn.Dropout(p=config.dropout)
-        self.output_layer = TaggingFNNDecoder(config.hidden_size, config.num_tags, config.tag_pad_idx)
+        self.output_layer = BertDecoder(self.bert_out_size, config.hidden_size, config.num_layer, config.num_tags,
+                                        config.tag_pad_idx)
 
         self.model_path = "./model/bert-base-chinese"
         self.tokenizer = BertTokenizerFast.from_pretrained(self.model_path)
         self.bert = BertForMaskedLM.from_pretrained(self.model_path)
 
-        # for name, param in self.bert.named_parameters():
-        #     param.requires_grad = False
+        for name, param in self.bert.named_parameters():
+            param.requires_grad = False
 
     def forward(self, batch: Batch):
         tag_ids = batch.tag_ids
@@ -33,7 +34,7 @@ class SLUBertTagging(nn.Module):
         # 与 batch.input_ids 相比，开头和结尾各多了一个 token
         tokenizer_out = self.tokenizer(utt, return_tensors='pt', padding=True).to(self.config.device)
         out = self.bert(**tokenizer_out)
-        hidden = out.logits[:, 1:-1, :]    # 去掉开头和结尾的 token
+        hidden = out.logits[:, 1:-1, :]  # 去掉开头和结尾的 token
         hidden = self.dropout_layer(hidden)
         tag_output = self.output_layer(hidden, tag_mask, tag_ids)
 
@@ -76,12 +77,14 @@ class SLUBertTagging(nn.Module):
             return predictions, labels, loss.cpu().item()
 
 
-class TaggingFNNDecoder(nn.Module):
+class BertDecoder(nn.Module):
 
-    def __init__(self, input_size, num_tags, pad_id):
-        super(TaggingFNNDecoder, self).__init__()
+    def __init__(self, input_size, rnn_hidden_size, rnn_num_layers, num_tags, pad_id):
+        super().__init__()
         self.num_tags = num_tags
-        # self.output_layer = nn.Linear(input_size, num_tags)
+        self.rnn = nn.LSTM(input_size=input_size, hidden_size=rnn_hidden_size // 2,
+                           num_layers=rnn_num_layers, batch_first=True, bidirectional=True,
+                           dropout=0.1)
         self.output_layer = nn.Sequential(
             nn.Linear(input_size, 512),
             nn.ReLU(),
@@ -98,4 +101,4 @@ class TaggingFNNDecoder(nn.Module):
         if labels is not None:
             loss = self.loss_fct(logits.view(-1, logits.shape[-1]), labels.view(-1))
             return prob, loss
-        return (prob, )
+        return (prob,)

@@ -15,3 +15,4 @@ README*.md
 /llm
 /tmp
 */__pycache__
+/logs
