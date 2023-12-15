@@ -5,6 +5,7 @@
 /data
 word2vec-768.txt
 model.bin
+/model/bert-base-chinese
 
 # info
 Project.pdf
@@ -12,3 +13,5 @@ README*.md
 
 # others
 /llm
+/tmp
+*/__pycache__
