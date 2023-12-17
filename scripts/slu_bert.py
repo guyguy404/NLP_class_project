@@ -59,6 +59,7 @@ def decode(choice):
     model.eval()
     dataset = train_dataset if choice == 'train' else dev_dataset
     predictions, labels = [], []
+    utts = []
     total_loss, count = 0, 0
     with torch.no_grad():
         for i in range(0, len(dataset), args.batch_size):
@@ -70,9 +71,17 @@ def decode(choice):
                     print(current_batch.utt[j], pred[j], label[j])
             predictions.extend(pred)
             labels.extend(label)
+            utts.extend(current_batch.utt)
             total_loss += loss
             count += 1
         metrics = Example.evaluator.acc(predictions, labels)
+        if args.testing and args.output_error_cases:
+            for i, pred in enumerate(predictions):
+                if set(pred) != set(labels[i]):
+                    print("utt:   ", utts[i])
+                    print("pred:  ", pred)
+                    print("label: ", labels[i])
+                    print()
     torch.cuda.empty_cache()
     gc.collect()
     return metrics, total_loss / count
@@ -149,6 +158,6 @@ else:
     start_time = time.time()
     metrics, dev_loss = decode('dev')
     dev_acc, dev_fscore = metrics['acc'], metrics['fscore']
-    predict()
+    # predict()
     print("Evaluation costs %.2fs ; Dev loss: %.4f\tDev acc: %.2f\tDev fscore(p/r/f): (%.2f/%.2f/%.2f)" % (
     time.time() - start_time, dev_loss, dev_acc, dev_fscore['precision'], dev_fscore['recall'], dev_fscore['fscore']))
