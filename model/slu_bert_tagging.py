@@ -2,7 +2,7 @@
 import re
 import torch
 import torch.nn as nn
-from transformers import BertTokenizerFast, BertForMaskedLM
+from transformers import BertTokenizerFast, BertModel
 
 from utils.batch import Batch
 
@@ -12,14 +12,14 @@ class SLUBertTagging(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.config = config
-        self.bert_out_size = 21128
+        self.bert_out_size = 768
         self.dropout_layer = nn.Dropout(p=config.dropout)
         self.output_layer = BertDecoder(self.bert_out_size, config.hidden_size, config.num_layer, config.num_tags,
                                         config.tag_pad_idx)
 
         self.model_path = "./model/bert-base-chinese"
         self.tokenizer = BertTokenizerFast.from_pretrained(self.model_path)
-        self.bert = BertForMaskedLM.from_pretrained(self.model_path)
+        self.bert = BertModel.from_pretrained(self.model_path)
 
         for name, param in self.bert.named_parameters():
             param.requires_grad = False
@@ -34,7 +34,7 @@ class SLUBertTagging(nn.Module):
         # 与 batch.input_ids 相比，开头和结尾各多了一个 token
         tokenizer_out = self.tokenizer(utt, return_tensors='pt', padding=True).to(self.config.device)
         out = self.bert(**tokenizer_out)
-        hidden = out.logits[:, 1:-1, :]  # 去掉开头和结尾的 token
+        hidden = out.last_hidden_state[:, 1:-1, :]  # 去掉第一个和最后一个 token
         hidden = self.dropout_layer(hidden)
         tag_output = self.output_layer(hidden, tag_mask, tag_ids)
 
