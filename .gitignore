@@ -5,7 +5,7 @@
 /data
 word2vec-768.txt
 model.bin
-/model/bert-base-chinese
+/model/*/
 
 # info
 Project.pdf
