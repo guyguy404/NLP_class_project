@@ -86,7 +86,7 @@ class BertDecoder(nn.Module):
                            num_layers=rnn_num_layers, batch_first=True, bidirectional=True,
                            dropout=0.1)
         self.output_layer = nn.Sequential(
-            nn.Linear(input_size, 512),
+            nn.Linear(rnn_hidden_size, 512),
             nn.ReLU(),
             nn.Linear(512, 512),
             nn.ReLU(),
@@ -95,7 +95,8 @@ class BertDecoder(nn.Module):
         self.loss_fct = nn.CrossEntropyLoss(ignore_index=pad_id)
 
     def forward(self, hiddens, mask, labels=None):
-        logits = self.output_layer(hiddens)
+        rnn_out = self.rnn(hiddens)[0]
+        logits = self.output_layer(rnn_out)
         logits += (1 - mask).unsqueeze(-1).repeat(1, 1, self.num_tags) * -1e32
         prob = torch.softmax(logits, dim=-1)
         if labels is not None:
