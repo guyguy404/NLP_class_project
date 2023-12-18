@@ -17,6 +17,7 @@ def add_argument_base(arg_parser):
     arg_parser.add_argument('--seed', default=999, type=int, help='Random seed')
     arg_parser.add_argument('--device', type=int, default=-1, help='Use which device: -1 -> cpu ; the index of gpu o.w.')
     arg_parser.add_argument('--testing', action='store_true', help='training or evaluation mode')
+    arg_parser.add_argument('--model_name', default='baseline', choices=['baseline', 'bert'], help='model name')
     arg_parser.add_argument('--output_error_cases', action='store_true', help='output error cases when testing')
     #### Training Hyperparams ####
     arg_parser.add_argument('--batch_size', default=32, type=int, help='Batch size')
