@@ -17,7 +17,7 @@ class SLUBertTagging(nn.Module):
         self.output_layer = BertDecoder(self.bert_out_size, config.hidden_size, config.num_layer, config.num_tags,
                                         config.tag_pad_idx)
 
-        self.model_path = "./model/bert-base-chinese"
+        self.model_path = "./model/" + config.bert_name
         self.tokenizer = BertTokenizerFast.from_pretrained(self.model_path)
         self.bert = BertModel.from_pretrained(self.model_path)
 
