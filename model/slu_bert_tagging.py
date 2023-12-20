@@ -19,7 +19,7 @@ class SLUBertTagging(nn.Module):
 
         self.model_path = "./model/" + config.bert_name
         self.tokenizer = BertTokenizerFast.from_pretrained(self.model_path)
-        self.bert = BertModel.from_pretrained(self.model_path)
+        self.bert = BertModel.from_pretrained(self.model_path).to(config.device)
 
         for name, param in self.bert.named_parameters():
             param.requires_grad = False
