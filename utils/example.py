@@ -35,6 +35,7 @@ class Example:
         self.did = did
 
         self.utt = ex['asr_1best']
+        self.manual_transcript = ex['manual_transcript']
         self.slot = {}
         for label in ex['semantic']:
             act_slot = f'{label[0]}-{label[1]}'

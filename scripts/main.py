@@ -65,6 +65,7 @@ def decode(choice):
     dataset = train_dataset if choice == 'train' else dev_dataset
     predictions, labels = [], []
     utts = []
+    manual_transcripts = []
     total_loss, count = 0, 0
     with torch.no_grad():
         for i in range(0, len(dataset), args.batch_size):
@@ -77,15 +78,17 @@ def decode(choice):
             predictions.extend(pred)
             labels.extend(label)
             utts.extend(current_batch.utt)
+            manual_transcripts.extend(current_batch.manual_transcript)
             total_loss += loss
             count += 1
         metrics = Example.evaluator.acc(predictions, labels)
         if args.testing and args.output_error_cases:
             for i, pred in enumerate(predictions):
                 if set(pred) != set(labels[i]):
-                    print("utt:   ", utts[i])
-                    print("pred:  ", pred)
-                    print("label: ", labels[i])
+                    print("manual: ", manual_transcripts[i])
+                    print("utt:    ", utts[i])
+                    print("pred:   ", pred)
+                    print("label:  ", labels[i])
                     print()
     torch.cuda.empty_cache()
     gc.collect()
