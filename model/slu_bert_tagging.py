@@ -15,7 +15,7 @@ class SLUBertTagging(nn.Module):
         self.bert_out_size = 768
         self.dropout_layer = nn.Dropout(p=config.dropout)
         self.output_layer = BertDecoder(self.bert_out_size, config.hidden_size, config.num_layer, config.num_tags,
-                                        config.tag_pad_idx)
+                                        config.tag_pad_idx, config.bert_output_layer == 'rnn')
 
         self.model_path = "./model/" + config.bert_name
         self.tokenizer = BertTokenizerFast.from_pretrained(self.model_path)
@@ -79,24 +79,37 @@ class SLUBertTagging(nn.Module):
 
 class BertDecoder(nn.Module):
 
-    def __init__(self, input_size, rnn_hidden_size, rnn_num_layers, num_tags, pad_id):
+    def __init__(self, input_size, rnn_hidden_size, rnn_num_layers, num_tags, pad_id, use_rnn=True):
         super().__init__()
         self.num_tags = num_tags
-        self.rnn = nn.LSTM(input_size=input_size, hidden_size=rnn_hidden_size // 2,
-                           num_layers=rnn_num_layers, batch_first=True, bidirectional=True,
-                           dropout=0.1)
-        self.output_layer = nn.Sequential(
-            nn.Linear(rnn_hidden_size, 512),
-            nn.ReLU(),
-            nn.Linear(512, 512),
-            nn.ReLU(),
-            nn.Linear(512, num_tags)
-        )
+        self.use_rnn = use_rnn
+        if use_rnn:
+            self.rnn = nn.LSTM(input_size=input_size, hidden_size=rnn_hidden_size // 2,
+                               num_layers=rnn_num_layers, batch_first=True, bidirectional=True,
+                               dropout=0.1)
+            self.output_layer = nn.Sequential(
+                nn.Linear(rnn_hidden_size, 512),
+                nn.ReLU(),
+                nn.Linear(512, 512),
+                nn.ReLU(),
+                nn.Linear(512, num_tags)
+            )
+        else:
+            self.output_layer = nn.Sequential(
+                nn.Linear(input_size, 512),
+                nn.ReLU(),
+                nn.Linear(512, 512),
+                nn.ReLU(),
+                nn.Linear(512, num_tags)
+            )
         self.loss_fct = nn.CrossEntropyLoss(ignore_index=pad_id)
 
     def forward(self, hiddens, mask, labels=None):
-        rnn_out = self.rnn(hiddens)[0]
-        logits = self.output_layer(rnn_out)
+        if self.use_rnn:
+            rnn_out = self.rnn(hiddens)[0]
+            logits = self.output_layer(rnn_out)
+        else:
+            logits = self.output_layer(hiddens)
         logits += (1 - mask).unsqueeze(-1).repeat(1, 1, self.num_tags) * -1e32
         prob = torch.softmax(logits, dim=-1)
         if labels is not None:
