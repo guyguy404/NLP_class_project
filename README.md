@@ -19,3 +19,10 @@ python scripts/main.py --device 0 --model_name bert --bert_name bert-base-chines
 python scripts/main.py --device 0 --model_name bert --bert_name bert-base-chinese --testing
 ```
 
+
+
+### 预训练模型
+
++ Bert: https://huggingface.co/bert-base-chinese，下载后放置于 `/model/bert-base-chinese`
++ Bert-WWM: https://huggingface.co/hfl/chinese-bert-wwm-ext，下载后放置于 `/model/chinese-bert-wwm-ext`
+
