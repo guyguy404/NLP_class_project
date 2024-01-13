@@ -1,0 +1,130 @@
+C:\Users\hcx\miniconda3\envs\nlp_project\python.exe D:\大学\课程\自然语言处理\Project\scripts\main.py --device 0 --model_name bert
+Use GPU with index 0
+Initialization finished ...
+Random seed is set to 999
+Use GPU with index 0
+Load dataset and database finished, cost 1.8612s ...
+Dataset size: train -> 5119 ; dev -> 895
+Total training steps: 16000
+Start training ......
+Training: 	Epoch: 0	Time: 8.9593	Training Loss: 1.0594
+Evaluation: 	Epoch: 0	Time: 1.0553	Dev acc: 73.41	Dev fscore(p/r/f): (76.85/74.77/75.79)	Dev cls acc: 92.07	Dev bert cls acc: 91.84
+NEW BEST MODEL: 	Epoch: 0	Dev loss: 0.5095	Dev acc: 73.41	Dev fscore(p/r/f): (76.85/74.77/75.79)
+Training: 	Epoch: 1	Time: 7.8362	Training Loss: 0.4669
+Evaluation: 	Epoch: 1	Time: 1.0449	Dev acc: 73.74	Dev fscore(p/r/f): (77.78/75.91/76.83)	Dev cls acc: 90.84	Dev bert cls acc: 92.07
+NEW BEST MODEL: 	Epoch: 1	Dev loss: 0.4731	Dev acc: 73.74	Dev fscore(p/r/f): (77.78/75.91/76.83)
+Training: 	Epoch: 2	Time: 7.8396	Training Loss: 0.4065
+Evaluation: 	Epoch: 2	Time: 1.0651	Dev acc: 75.87	Dev fscore(p/r/f): (78.31/80.19/79.24)	Dev cls acc: 92.85	Dev bert cls acc: 93.07
+NEW BEST MODEL: 	Epoch: 2	Dev loss: 0.4288	Dev acc: 75.87	Dev fscore(p/r/f): (78.31/80.19/79.24)
+Training: 	Epoch: 3	Time: 7.7900	Training Loss: 0.3514
+Evaluation: 	Epoch: 3	Time: 1.0832	Dev acc: 76.09	Dev fscore(p/r/f): (80.44/79.35/79.90)	Dev cls acc: 92.18	Dev bert cls acc: 92.29
+NEW BEST MODEL: 	Epoch: 3	Dev loss: 0.4053	Dev acc: 76.09	Dev fscore(p/r/f): (80.44/79.35/79.90)
+Training: 	Epoch: 4	Time: 7.8950	Training Loss: 0.3129
+Evaluation: 	Epoch: 4	Time: 1.0852	Dev acc: 74.97	Dev fscore(p/r/f): (80.74/77.37/79.02)	Dev cls acc: 91.84	Dev bert cls acc: 90.95
+Training: 	Epoch: 5	Time: 7.8710	Training Loss: 0.2849
+Evaluation: 	Epoch: 5	Time: 1.0874	Dev acc: 76.54	Dev fscore(p/r/f): (80.61/79.35/79.98)	Dev cls acc: 92.07	Dev bert cls acc: 91.73
+NEW BEST MODEL: 	Epoch: 5	Dev loss: 0.4280	Dev acc: 76.54	Dev fscore(p/r/f): (80.61/79.35/79.98)
+Training: 	Epoch: 6	Time: 7.8327	Training Loss: 0.2639
+Evaluation: 	Epoch: 6	Time: 1.0959	Dev acc: 76.87	Dev fscore(p/r/f): (81.67/80.40/81.03)	Dev cls acc: 92.74	Dev bert cls acc: 92.40
+NEW BEST MODEL: 	Epoch: 6	Dev loss: 0.3841	Dev acc: 76.87	Dev fscore(p/r/f): (81.67/80.40/81.03)
+Training: 	Epoch: 7	Time: 7.8896	Training Loss: 0.2331
+Evaluation: 	Epoch: 7	Time: 1.0865	Dev acc: 76.76	Dev fscore(p/r/f): (81.97/79.67/80.80)	Dev cls acc: 92.85	Dev bert cls acc: 92.29
+Training: 	Epoch: 8	Time: 8.1183	Training Loss: 0.2121
+Evaluation: 	Epoch: 8	Time: 1.0966	Dev acc: 76.09	Dev fscore(p/r/f): (82.64/78.94/80.75)	Dev cls acc: 91.06	Dev bert cls acc: 91.06
+Training: 	Epoch: 9	Time: 8.2340	Training Loss: 0.1836
+Evaluation: 	Epoch: 9	Time: 1.0952	Dev acc: 77.43	Dev fscore(p/r/f): (82.68/79.67/81.15)	Dev cls acc: 92.74	Dev bert cls acc: 92.18
+NEW BEST MODEL: 	Epoch: 9	Dev loss: 0.4688	Dev acc: 77.43	Dev fscore(p/r/f): (82.68/79.67/81.15)
+Training: 	Epoch: 10	Time: 8.1834	Training Loss: 0.1616
+Evaluation: 	Epoch: 10	Time: 1.1000	Dev acc: 75.87	Dev fscore(p/r/f): (82.28/78.42/80.30)	Dev cls acc: 91.96	Dev bert cls acc: 91.40
+Training: 	Epoch: 11	Time: 8.1745	Training Loss: 0.1901
+Evaluation: 	Epoch: 11	Time: 1.1174	Dev acc: 77.54	Dev fscore(p/r/f): (82.92/79.98/81.42)	Dev cls acc: 93.85	Dev bert cls acc: 91.62
+NEW BEST MODEL: 	Epoch: 11	Dev loss: 0.4632	Dev acc: 77.54	Dev fscore(p/r/f): (82.92/79.98/81.42)
+Training: 	Epoch: 12	Time: 8.1741	Training Loss: 0.1436
+Evaluation: 	Epoch: 12	Time: 1.1086	Dev acc: 78.10	Dev fscore(p/r/f): (83.21/80.60/81.89)	Dev cls acc: 93.30	Dev bert cls acc: 92.51
+NEW BEST MODEL: 	Epoch: 12	Dev loss: 0.5761	Dev acc: 78.10	Dev fscore(p/r/f): (83.21/80.60/81.89)
+Training: 	Epoch: 13	Time: 8.1535	Training Loss: 0.1299
+Evaluation: 	Epoch: 13	Time: 1.1162	Dev acc: 78.32	Dev fscore(p/r/f): (81.10/81.44/81.27)	Dev cls acc: 92.96	Dev bert cls acc: 93.52
+NEW BEST MODEL: 	Epoch: 13	Dev loss: 0.6809	Dev acc: 78.32	Dev fscore(p/r/f): (81.10/81.44/81.27)
+Training: 	Epoch: 14	Time: 8.0573	Training Loss: 0.1343
+Evaluation: 	Epoch: 14	Time: 1.1070	Dev acc: 76.09	Dev fscore(p/r/f): (81.36/78.73/80.02)	Dev cls acc: 92.96	Dev bert cls acc: 91.73
+Training: 	Epoch: 15	Time: 8.0872	Training Loss: 0.1140
+Evaluation: 	Epoch: 15	Time: 1.0997	Dev acc: 75.20	Dev fscore(p/r/f): (82.71/77.79/80.17)	Dev cls acc: 93.41	Dev bert cls acc: 90.50
+Training: 	Epoch: 16	Time: 7.9897	Training Loss: 0.1074
+Evaluation: 	Epoch: 16	Time: 1.0990	Dev acc: 76.09	Dev fscore(p/r/f): (81.53/78.73/80.11)	Dev cls acc: 93.63	Dev bert cls acc: 91.51
+Training: 	Epoch: 17	Time: 8.3548	Training Loss: 0.1391
+Evaluation: 	Epoch: 17	Time: 1.1005	Dev acc: 78.99	Dev fscore(p/r/f): (83.40/81.75/82.57)	Dev cls acc: 93.97	Dev bert cls acc: 93.07
+NEW BEST MODEL: 	Epoch: 17	Dev loss: 0.5366	Dev acc: 78.99	Dev fscore(p/r/f): (83.40/81.75/82.57)
+Training: 	Epoch: 18	Time: 8.2030	Training Loss: 0.0963
+Evaluation: 	Epoch: 18	Time: 1.1047	Dev acc: 73.85	Dev fscore(p/r/f): (80.70/76.75/78.67)	Dev cls acc: 93.07	Dev bert cls acc: 90.50
+Training: 	Epoch: 19	Time: 8.1207	Training Loss: 0.0929
+Evaluation: 	Epoch: 19	Time: 1.0918	Dev acc: 75.75	Dev fscore(p/r/f): (82.95/78.10/80.45)	Dev cls acc: 91.96	Dev bert cls acc: 90.28
+Training: 	Epoch: 20	Time: 8.1864	Training Loss: 0.0874
+Evaluation: 	Epoch: 20	Time: 1.1010	Dev acc: 77.21	Dev fscore(p/r/f): (83.53/79.35/81.39)	Dev cls acc: 93.97	Dev bert cls acc: 91.51
+Training: 	Epoch: 21	Time: 8.2920	Training Loss: 0.0985
+Evaluation: 	Epoch: 21	Time: 1.1455	Dev acc: 77.09	Dev fscore(p/r/f): (81.12/79.77/80.44)	Dev cls acc: 93.74	Dev bert cls acc: 92.74
+Training: 	Epoch: 22	Time: 8.1665	Training Loss: 0.0866
+Evaluation: 	Epoch: 22	Time: 1.1140	Dev acc: 75.31	Dev fscore(p/r/f): (81.75/78.00/79.83)	Dev cls acc: 92.96	Dev bert cls acc: 90.84
+Training: 	Epoch: 23	Time: 8.1512	Training Loss: 0.0823
+Evaluation: 	Epoch: 23	Time: 1.1162	Dev acc: 77.32	Dev fscore(p/r/f): (83.73/79.98/81.81)	Dev cls acc: 93.63	Dev bert cls acc: 91.28
+Training: 	Epoch: 24	Time: 8.1649	Training Loss: 0.0759
+Evaluation: 	Epoch: 24	Time: 1.1038	Dev acc: 75.87	Dev fscore(p/r/f): (82.61/77.79/80.13)	Dev cls acc: 94.08	Dev bert cls acc: 90.73
+Training: 	Epoch: 25	Time: 8.0906	Training Loss: 0.0749
+Evaluation: 	Epoch: 25	Time: 1.1103	Dev acc: 76.09	Dev fscore(p/r/f): (83.57/78.52/80.97)	Dev cls acc: 93.74	Dev bert cls acc: 90.73
+Training: 	Epoch: 26	Time: 8.0954	Training Loss: 0.0760
+Evaluation: 	Epoch: 26	Time: 1.1119	Dev acc: 77.65	Dev fscore(p/r/f): (82.41/80.60/81.50)	Dev cls acc: 94.08	Dev bert cls acc: 92.29
+Training: 	Epoch: 27	Time: 8.1195	Training Loss: 0.0605
+Evaluation: 	Epoch: 27	Time: 1.1064	Dev acc: 75.98	Dev fscore(p/r/f): (82.72/77.89/80.24)	Dev cls acc: 93.30	Dev bert cls acc: 90.95
+Training: 	Epoch: 28	Time: 8.2117	Training Loss: 0.0677
+Evaluation: 	Epoch: 28	Time: 1.1143	Dev acc: 76.09	Dev fscore(p/r/f): (83.00/78.42/80.64)	Dev cls acc: 93.85	Dev bert cls acc: 90.73
+Training: 	Epoch: 29	Time: 8.1270	Training Loss: 0.0759
+Evaluation: 	Epoch: 29	Time: 1.1076	Dev acc: 75.42	Dev fscore(p/r/f): (80.98/77.69/79.30)	Dev cls acc: 93.52	Dev bert cls acc: 91.40
+Training: 	Epoch: 30	Time: 8.0723	Training Loss: 0.0640
+Evaluation: 	Epoch: 30	Time: 1.1117	Dev acc: 77.88	Dev fscore(p/r/f): (83.21/80.60/81.89)	Dev cls acc: 93.85	Dev bert cls acc: 92.40
+Training: 	Epoch: 31	Time: 8.0998	Training Loss: 0.0606
+Evaluation: 	Epoch: 31	Time: 1.1079	Dev acc: 77.09	Dev fscore(p/r/f): (81.83/79.35/80.57)	Dev cls acc: 93.52	Dev bert cls acc: 92.29
+Training: 	Epoch: 32	Time: 7.9817	Training Loss: 0.0491
+Evaluation: 	Epoch: 32	Time: 1.1043	Dev acc: 78.66	Dev fscore(p/r/f): (83.28/80.50/81.87)	Dev cls acc: 94.19	Dev bert cls acc: 92.18
+Training: 	Epoch: 33	Time: 8.0262	Training Loss: 0.0534
+Evaluation: 	Epoch: 33	Time: 1.1102	Dev acc: 76.98	Dev fscore(p/r/f): (83.28/79.98/81.60)	Dev cls acc: 93.85	Dev bert cls acc: 90.84
+Training: 	Epoch: 34	Time: 8.2997	Training Loss: 0.0612
+Evaluation: 	Epoch: 34	Time: 1.1167	Dev acc: 76.42	Dev fscore(p/r/f): (82.74/78.00/80.30)	Dev cls acc: 93.97	Dev bert cls acc: 90.95
+Training: 	Epoch: 35	Time: 8.3241	Training Loss: 0.0580
+Evaluation: 	Epoch: 35	Time: 1.1237	Dev acc: 77.54	Dev fscore(p/r/f): (83.10/79.98/81.51)	Dev cls acc: 93.85	Dev bert cls acc: 92.85
+Training: 	Epoch: 36	Time: 8.2521	Training Loss: 0.0610
+Evaluation: 	Epoch: 36	Time: 1.1214	Dev acc: 77.21	Dev fscore(p/r/f): (82.40/79.56/80.95)	Dev cls acc: 92.63	Dev bert cls acc: 92.51
+Training: 	Epoch: 37	Time: 8.2188	Training Loss: 0.0524
+Evaluation: 	Epoch: 37	Time: 1.1106	Dev acc: 77.54	Dev fscore(p/r/f): (81.67/80.40/81.03)	Dev cls acc: 94.19	Dev bert cls acc: 92.74
+Training: 	Epoch: 38	Time: 8.0846	Training Loss: 0.0510
+Evaluation: 	Epoch: 38	Time: 1.1249	Dev acc: 76.31	Dev fscore(p/r/f): (82.19/78.94/80.53)	Dev cls acc: 93.85	Dev bert cls acc: 91.73
+Traceback (most recent call last):
+  File "D:\大学\课程\自然语言处理\Project\scripts\main.py", line 142, in <module>
+    out, cls_out = model(current_batch)
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\大学\课程\自然语言处理\Project\model\slu_bert_tagging.py", line 42, in forward
+    out = self.bert(**tokenizer_out)
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\transformers\models\bert\modeling_bert.py", line 1013, in forward
+    encoder_outputs = self.encoder(
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\transformers\models\bert\modeling_bert.py", line 607, in forward
+    layer_outputs = layer_module(
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\transformers\models\bert\modeling_bert.py", line 497, in forward
+    self_attention_outputs = self.attention(
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\transformers\models\bert\modeling_bert.py", line 427, in forward
+    self_outputs = self.self(
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\transformers\models\bert\modeling_bert.py", line 355, in forward
+    attention_probs = nn.functional.softmax(attention_scores, dim=-1)
+  File "C:\Users\hcx\miniconda3\envs\nlp_project\lib\site-packages\torch\nn\functional.py", line 1811, in softmax
+    def softmax(input: Tensor, dim: Optional[int] = None, _stacklevel: int = 3, dtype: Optional[DType] = None) -> Tensor:
+KeyboardInterrupt
+
+进程已结束，退出代码为 -1073741510 (0xC000013A: interrupted by Ctrl+C)

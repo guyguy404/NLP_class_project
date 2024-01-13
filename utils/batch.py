@@ -1,9 +1,14 @@
 #-*- coding:utf-8 -*-
 import torch
+import os
+import sys
+install_path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(install_path)
 from utils.example import Example
 
 
-def from_example_list(args, ex_list: list[Example], device='cpu', train=True):
+
+def from_example_list(args, ex_list, device='cpu', train=True):
     ex_list = sorted(ex_list, key=lambda x: len(x.input_idx), reverse=True)
     batch = Batch(ex_list, device)
     pad_idx = args.pad_idx
@@ -37,7 +42,7 @@ def from_example_list(args, ex_list: list[Example], device='cpu', train=True):
 
 class Batch:
 
-    def __init__(self, examples: list[Example], device):
+    def __init__(self, examples, device):
         super(Batch, self).__init__()
 
         self.lengths = None

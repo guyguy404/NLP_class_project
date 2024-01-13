@@ -1,0 +1,114 @@
+# 多个终点名称
+utt:    导航洋浦大街与合肥路交汇
+pred:   ['inform-操作-导航', 'inform-终点名称-洋浦大街与', 'inform-终点名称-合肥路交汇']
+label:  ['inform-终点名称-洋浦大街与合肥路交汇', 'inform-操作-导航']
+
+utt:    导航到三亚和酒楼
+pred:   ['inform-操作-导航', 'inform-终点名称-三亚', 'inform-终点名称-酒楼']
+label:  ['inform-操作-导航', 'inform-终点名称-三义和酒楼']
+
+# 背景音
+utt:    最近的六公里
+pred:   ['inform-请求类型-最近']
+label:  []
+
+# “导航”的词性（动词和名词）
+utt:    打开导航我要去林安物流园
+pred:   ['inform-操作-打开', 'inform-操作-导航', 'inform-终点名称-林安物流园']
+label:  ['inform-终点名称-林安物流园', 'inform-操作-打开', 'inform-对象-导航']
+
+utt:    去附近加油站
+pred:   ['inform-请求类型-附近', 'inform-poi目标-加油站']
+label:  ['inform-请求类型-附近', 'inform-终点目标-加油站']
+
+utt:    导航北市场
+pred:   ['inform-操作-导航北市场']
+label:  ['inform-操作-导航', 'inform-终点名称-北市场']
+
+utt:    导航古井
+pred:   ['inform-操作-导航', 'inform-poi名称-古井']
+label:  ['inform-终点名称-古井', 'inform-操作-导航']
+
+utt:    手机
+pred:   ['inform-poi名称-手']
+label:  []
+
+utt:    去上海佩的我要到宜昌街
+pred:   ['inform-终点名称-上海', 'inform-终点名称-宜昌街']
+label:  ['inform-终点名称-宜昌街']
+
+utt:    导航到儿童福利院
+pred:   ['inform-操作-导航', 'inform-终点名称-儿童', 'inform-终点名称-福利院']
+label:  ['inform-操作-导航', 'inform-终点名称-儿童福利院']
+
+utt:    导航沙土镇新东方小学
+pred:   ['inform-操作-导航沙土镇新东方小学']
+label:  ['inform-终点名称-沙土镇新东方小学', 'inform-操作-导航']
+
+utt:    导航杨利蛋糕坊
+pred:   ['inform-操作-导航杨利蛋糕坊']
+label:  ['inform-操作-导航', 'inform-终点名称-杨利蛋糕坊']
+
+utt:    附近哪有好吃的
+pred:   ['inform-请求类型-附近']
+label:  ['inform-poi名称-好吃的', 'inform-请求类型-附近']
+
+utt:    导航去劫田
+pred:   ['inform-操作-导航']
+label:  ['inform-操作-导航', 'inform-终点名称-劫田']
+
+utt:    成都的吉田
+pred:   ['inform-poi名称-成都']
+label:  ['inform-poi目标-吉田', 'inform-poi修饰-成都']
+
+utt:    我要去加油
+pred:   ['inform-终点名称-油']
+label:  ['inform-终点名称-加油']
+
+utt:    到重庆
+pred:   ['inform-poi名称-重庆']
+label:  ['inform-终点名称-重庆']
+
+utt:    体育场
+pred:   ['inform-poi名称-体', 'inform-poi名称-育场']
+label:  ['inform-poi名称-体育场']
+
+utt:    我要去吃德天顺盖码饭
+pred:   ['inform-终点名称-德天顺']
+label:  ['inform-终点名称-德天顺盖码饭']
+
+utt:    我要去海州区中茵名都
+pred:   ['inform-终点名称-海州区', 'inform-终点名称-中茵名都']
+label:  ['inform-终点名称-海州区中茵名都']
+
+utt:    导航大众益阳四S店
+pred:   ['inform-操作-导航大众', 'inform-终点名称-益阳四S店']
+label:  ['inform-操作-导航', 'inform-终点名称-大众益阳四s店']
+
+utt:    去望城路四S店
+pred:   ['inform-终点名称-望城路四', 'inform-终点名称-店']
+label:  ['inform-终点名称-望城路四s店']
+
+utt:    走高速
+pred:   ['inform-路线偏好-高速']
+label:  ['inform-路线偏好-走高速']
+
+utt:    什么取消导航了不要了不用了
+pred:   ['inform-操作-取消', 'inform-页码-导航']
+label:  ['inform-操作-取消', 'inform-对象-导航']
+
+utt:    我要去北六里变电所
+pred:   ['inform-终点名称-北六里变', 'inform-终点名称-所']
+label:  ['inform-终点名称-北六里变电所']
+
+utt:    到水峪公寓五号楼
+pred:   ['inform-终点名称-到', 'inform-终点名称-水峪公寓五号楼']
+label:  ['inform-终点名称-水峪公寓五号楼']
+
+utt:    来青岛省骨科医院
+pred:   ['inform-终点名称-青岛省骨科医院']
+label:  ['inform-poi名称-青岛省骨科医院']
+
+utt:    继续导航加州
+pred:   ['inform-操作-继续', 'inform-操作-导航', 'inform-终点名称-加州']
+label:  ['inform-终点名称-加州', 'inform-操作-继续导航']
