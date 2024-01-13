@@ -109,9 +109,9 @@ class BertDecoder(nn.Module):
             rnn_out = self.rnn(hiddens)[0]
             logits = self.output_layer(rnn_out)
         else:
-            logits = self.output_layer(hiddens)
+            logits = self.output_layer(hiddens) #[32,26,74]
         logits += (1 - mask).unsqueeze(-1).repeat(1, 1, self.num_tags) * -1e32
-        prob = torch.softmax(logits, dim=-1)
+        prob = torch.softmax(logits, dim=-1)  #[32,10,74]
         if labels is not None:
             loss = self.loss_fct(logits.view(-1, logits.shape[-1]), labels.view(-1))
             return prob, loss
