@@ -10,6 +10,7 @@ model.bin
 # info
 Project.pdf
 README*.md
+!README.md
 
 # others
 /llm
