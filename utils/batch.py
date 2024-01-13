@@ -10,7 +10,8 @@ def from_example_list(args, ex_list: list[Example], device='cpu', train=True):
     tag_pad_idx = args.tag_pad_idx
 
     batch.utt = [ex.utt for ex in ex_list]
-    batch.manual_transcript = [ex.manual_transcript for ex in ex_list]
+    if hasattr(ex_list[0], 'manual_transcript'):
+        batch.manual_transcript = [ex.manual_transcript for ex in ex_list]
     input_lens = [len(ex.input_idx) for ex in ex_list]
     max_len = max(input_lens)
     input_ids = [ex.input_idx + [pad_idx] * (max_len - len(ex.input_idx)) for ex in ex_list]
